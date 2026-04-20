@@ -1,0 +1,7 @@
+[theme]
+font = "sans-serif"
+primaryColor="rgb(255, 178, 120)"
+secondaryBackgroundColor="#fde8d8ff"
+dataframeHeaderBackgroundColor="#ffeddfff"
+dataframeBorderColor="#ffe3cdff"
+textColor="black"
