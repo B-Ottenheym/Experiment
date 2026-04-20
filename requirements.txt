@@ -1,0 +1,14 @@
+numpy
+pandas
+scikit-learn
+xgboost
+lightgbm
+catboost
+streamlit==1.55.0
+matplotlib
+openpyxl
+shap
+dice-ml
+alibi
+anchor-exp
+XAI-library

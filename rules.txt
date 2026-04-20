@@ -1,0 +1,5 @@
+Dit project wordt voorspeld als vertraagd op basis van de volgende beslisregels:
+
+Informatiemanagement volgens ISO 19650 = Nee
+Vergunningen reeds verkregen (%) < 55
+Aandeel weergevoelige activiteiten (%) ≥ 20
