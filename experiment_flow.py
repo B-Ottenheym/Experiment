@@ -423,6 +423,11 @@ def step_4_redirect():
     st.caption("Werkt de knop niet? Kopieer dan de onderstaande link en plak deze in uw browser.")
     st.code(url, language="text")
 
+    st.markdown("---")
+    col1, col2 = st.columns([1, 1])
+    with col1:
+        st.button("Terug", key="step4_back", on_click=_back)
+
 def run_experiment():
     _init_participant_state()
     _progress()
