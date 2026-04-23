@@ -343,10 +343,10 @@ De invoerwaarden zijn vastgezet voor dit onderzoek en kunnen niet worden aangepa
             st.markdown(
                 """
             <div style="background-color:#fff4ec; border:2px solid #ddd; padding:16px; margin-bottom:16px;">
-              <div style="font-weight:600; font-size:18px; margin-bottom:8px;">
+              <div style="font-weight:600; font-size:17px; margin-bottom:8px;">
                 Hoe moet ik deze uitleg interpreteren?
               </div>
-              <div style="font-size:16px; line-height:1.2;">
+              <div style="font-size:15px; line-height:1.5;">
                 Deze grafiek laat zien <strong>welke projectkenmerken volgens het model het meest bijdragen</strong>
                 aan de voorspelling voor <strong>dit specifieke project</strong>.
                 <br><br>
@@ -360,10 +360,10 @@ De invoerwaarden zijn vastgezet voor dit onderzoek en kunnen niet worden aangepa
             </div>
             
             <div style="background-color:#fff4ec; border:1px solid #ddd; padding:16px;">
-              <div style="font-weight:600; font-size:18px; margin-bottom:8px;">
+              <div style="font-weight:600; font-size:17px; margin-bottom:32px;">
                 Hoe genereert het systeem deze uitleg?
               </div>
-              <div style="font-size:16px; line-height:1.2;">
+              <div style="font-size:15px; line-height:1.5;">
                 Deze uitleg is gebaseerd op een methode die per project bekijkt
                 hoeveel ieder projectkenmerk bijdraagt aan de uiteindelijke voorspelling.
                 <br><br>
