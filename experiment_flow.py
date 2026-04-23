@@ -308,6 +308,8 @@ De invoerwaarden zijn vastgezet voor dit onderzoek en kunnen niet worden aangepa
     if st.button("Voorspellen", key="step3_predict",):
         st.session_state.show_results = True
 
+    st.markdown("---")
+    
     if st.session_state.show_results:
         st.subheader("AI‑uitkomst")
 
