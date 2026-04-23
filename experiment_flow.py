@@ -53,7 +53,7 @@ def _build_qualtrics_url():
     return QUALTRICS_BASE_URL + "?" + qs
 
 def get_connection():
-    return psycopg2.connect(st.secrets["db"]["url"], sllmode="require")
+    return psycopg2.connect(st.secrets["db"]["url"], sslmode="require")
 
 def assign_condition(conditions: list[str]) -> str:
     with get_connection() as conn:
