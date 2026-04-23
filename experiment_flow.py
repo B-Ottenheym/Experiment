@@ -360,7 +360,7 @@ De invoerwaarden zijn vastgezet voor dit onderzoek en kunnen niet worden aangepa
               </div>
             </div>
             
-            <div style="background-color:#fff4ec; border:1px solid #ddd; padding:16px;">
+            <div style="background-color:#fff8f4; border:1px solid #ddd; padding:16px;">
               <div style="font-weight:600; font-size:17px; margin-bottom:8px;">
                 Hoe genereert het systeem deze uitleg?
               </div>
