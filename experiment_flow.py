@@ -339,15 +339,36 @@ De invoerwaarden zijn vastgezet voor dit onderzoek en kunnen niet worden aangepa
         cond = st.session_state.condition
         st.subheader(f"Uitleg ({cond})")
 
-        if cond == "SHAP":
-
-            st.markdown("""
+        if cond == "SHAP":            
+            st.markdown(
+                """
             <div style="border:1px solid #ddd; padding:16px; margin-bottom:16px;">
               <h4>Hoe moet ik deze uitleg interpreteren?</h4>
               <p>
-                Deze grafiek laat zien welke kenmerken bijdragen aan de voorspelling.
+                Deze uitleg laat zien welke projectkenmerken volgens het model
+                het meest bijdragen aan de voorspelling voor dit specifieke project.
               </p>
-            </div>""")
+              <p>
+                De uitleg helpt om te begrijpen waarom het model tot deze uitkomst komt,
+                maar is niet bedoeld als algemene regel voor alle projecten.
+              </p>
+            </div>
+            
+            <div style="border:1px solid #ddd; padding:16px;">
+              <h4>Hoe genereert het systeem deze uitleg?</h4>
+              <p>
+                Het systeem genereert deze uitleg door te analyseren
+                hoe veranderingen in afzonderlijke projectkenmerken
+                de voorspelling van het model beïnvloeden.
+              </p>
+              <p>
+                Op basis van deze analyse wordt bepaald welke kenmerken
+                volgens het model het meest relevant zijn voor de uiteindelijke uitkomst.
+              </p>
+            </div>
+                """,
+                unsafe_allow_html=True,
+            )
 
 
 
