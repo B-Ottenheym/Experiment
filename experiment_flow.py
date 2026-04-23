@@ -339,6 +339,111 @@ De invoerwaarden zijn vastgezet voor dit onderzoek en kunnen niet worden aangepa
         st.subheader("Uitleg")
         cond = st.session_state.condition
 
+        if cond == "SHAP":
+            with st.expander("Hoe moet ik deze uitleg interpreteren?", expanded=True):
+                st.markdown("""
+                Deze grafiek laat zien **welke projectkenmerken volgens het model het meest bijdragen**
+                aan de voorspelling voor **dit specifieke project**.
+
+                - Balken die omhoog wijzen vergroten het voorspelde vertragingsrisico.
+                - Balken die omlaag wijzen verkleinen het voorspelde vertragingsrisico.
+                - Hoe langer de balk, hoe groter de invloed van dat kenmerk volgens het model.
+
+                Deze uitleg helpt om te begrijpen **waarom het model tot deze voorspelling komt**,
+                maar zegt niets over welke kenmerken in alle projecten belangrijk zijn.
+                """)
+
+            with st.expander("Hoe genereert het systeem deze uitleg?", expanded=True):
+                st.markdown("""
+                Deze uitleg is gebaseerd op een methode die per project bekijkt
+                hoeveel ieder projectkenmerk bijdraagt aan de uiteindelijke voorspelling.
+
+                Het model vergelijkt daarbij de voorspelling mét en zonder specifieke kenmerken.
+                Op basis van dit verschil wordt bepaald of een kenmerk de voorspelling verhoogt of verlaagt.
+
+                De uitleg is specifiek voor dit project en deze voorspelling.
+                """)
+
+
+        elif cond == "Regels":
+            with st.expander("Hoe moet ik deze uitleg interpreteren?", expanded=True):
+                st.markdown("""
+                Deze regel laat zien **onder welke combinatie van projectkenmerken**
+                het AI-systeem tot een vergelijkbare voorspelling komt als bij dit project.
+
+                Als aan alle genoemde voorwaarden wordt voldaan,
+                hoort daar volgens het model deze inschatting van de verwachte vertraging bij.
+
+                Zie deze regel als:
+                *de belangrijkste kenmerken waarop het model zich in dit geval baseert.*
+                """)
+
+            with st.expander("Hoe genereert het systeem deze uitleg?", expanded=True):
+                st.markdown("""
+                Deze uitleg is afgeleid van het oorspronkelijke AI-model met behulp van
+                een eenvoudiger model dat beter uitlegbaar is.
+
+                Dit vereenvoudigde model probeert het gedrag van het AI-model
+                zo goed mogelijk te benaderen in de buurt van deze voorspelling.
+
+                De regel is daardoor een benadering en geen exacte weergave
+                van alle interne berekeningen van het oorspronkelijke model.
+                """)
+
+
+        elif cond == "Tegenfeitelijk":
+            with st.expander("Hoe moet ik deze uitleg interpreteren?", expanded=True):
+                st.markdown("""
+                Deze tegenfeitelijke uitleg laat zien **welke minimale veranderingen**
+                in het project volgens het model zouden leiden tot een duidelijk lager vertragingsrisico.
+
+                Zie dit als:
+                *als deze aspecten anders waren geweest, zou het model een gunstigere voorspelling geven.*
+
+                Dit betekent niet dat deze veranderingen automatisch haalbaar,
+                wenselijk of volledig onder controle zijn in de praktijk.
+                """)
+
+            with st.expander("Hoe genereert het systeem deze uitleg?", expanded=True):
+                st.markdown("""
+                Het systeem zoekt naar een alternatief projectscenario
+                dat zo sterk mogelijk lijkt op het huidige project,
+                maar waarvoor de voorspelde vertraging lager is.
+
+                Daarbij worden alleen projectkenmerken aangepast
+                die volgens het model invloed hebben op de voorspelling.
+
+                Het doel is om zo weinig mogelijk te veranderen,
+                terwijl de voorspelling duidelijk verschilt.
+                """)
+
+
+        elif cond == "Surrogaatmodel (beslisboom)":
+            with st.expander("Hoe moet ik deze uitleg interpreteren?", expanded=True):
+                st.markdown("""
+                Deze beslisboom geeft een **vereenvoudigd overzicht**
+                van hoe het AI-systeem in grote lijnen tot een voorspelling komt.
+
+                De eerste splitsingen laten zien
+                welke projectkenmerken vaak als belangrijk worden gezien.
+
+                Zie dit als:
+                *een globale indruk van hoe het model redeneert*,
+                niet als een exacte beschrijving van elke afzonderlijke voorspelling.
+                """)
+
+            with st.expander("Hoe genereert het systeem deze uitleg?", expanded=True):
+                st.markdown("""
+                Deze beslisboom is getraind om het gedrag van het oorspronkelijke AI-model
+                zo goed mogelijk na te bootsen met een eenvoudiger en beter uitlegbaar model.
+
+                Door deze vereenvoudiging wordt de uitleg overzichtelijker,
+                maar gaat ook een deel van de nauwkeurigheid verloren.
+
+                De boom geeft daarom inzicht in algemene patronen,
+                niet in alle details van het onderliggende model.
+                """)
+
         if cond == "Black box":
             st.info("In deze versie van het systeem wordt geen uitleg bij de voorspelling gegeven.")
 
@@ -378,112 +483,6 @@ De invoerwaarden zijn vastgezet voor dit onderzoek en kunnen niet worden aangepa
                 )
             else:
                 st.warning(f"Tabel niet gevonden: {p}")
-
-
-        if cond == "SHAP":
-            with st.expander("Hoe moet ik deze uitleg interpreteren?"):
-                st.markdown("""
-                Deze grafiek laat zien **welke projectkenmerken volgens het model het meest bijdragen**
-                aan de voorspelling voor **dit specifieke project**.
-
-                - Balken die omhoog wijzen vergroten het voorspelde vertragingsrisico.
-                - Balken die omlaag wijzen verkleinen het voorspelde vertragingsrisico.
-                - Hoe langer de balk, hoe groter de invloed van dat kenmerk volgens het model.
-
-                Deze uitleg helpt om te begrijpen **waarom het model tot deze voorspelling komt**,
-                maar zegt niets over welke kenmerken in alle projecten belangrijk zijn.
-                """)
-
-            with st.expander("Hoe genereert het systeem deze uitleg?"):
-                st.markdown("""
-                Deze uitleg is gebaseerd op een methode die per project bekijkt
-                hoeveel ieder projectkenmerk bijdraagt aan de uiteindelijke voorspelling.
-
-                Het model vergelijkt daarbij de voorspelling mét en zonder specifieke kenmerken.
-                Op basis van dit verschil wordt bepaald of een kenmerk de voorspelling verhoogt of verlaagt.
-
-                De uitleg is specifiek voor dit project en deze voorspelling.
-                """)
-
-
-        elif cond == "Regels":
-            with st.expander("Hoe moet ik deze uitleg interpreteren?"):
-                st.markdown("""
-                Deze regel laat zien **onder welke combinatie van projectkenmerken**
-                het AI-systeem tot een vergelijkbare voorspelling komt als bij dit project.
-
-                Als aan alle genoemde voorwaarden wordt voldaan,
-                hoort daar volgens het model deze inschatting van de verwachte vertraging bij.
-
-                Zie deze regel als:
-                *de belangrijkste kenmerken waarop het model zich in dit geval baseert.*
-                """)
-
-            with st.expander("Hoe genereert het systeem deze uitleg?"):
-                st.markdown("""
-                Deze uitleg is afgeleid van het oorspronkelijke AI-model met behulp van
-                een eenvoudiger model dat beter uitlegbaar is.
-
-                Dit vereenvoudigde model probeert het gedrag van het AI-model
-                zo goed mogelijk te benaderen in de buurt van deze voorspelling.
-
-                De regel is daardoor een benadering en geen exacte weergave
-                van alle interne berekeningen van het oorspronkelijke model.
-                """)
-
-
-        elif cond == "Tegenfeitelijk":
-            with st.expander("Hoe moet ik deze uitleg interpreteren?", expanded=True):
-                st.markdown("""
-                Deze tegenfeitelijke uitleg laat zien **welke minimale veranderingen**
-                in het project volgens het model zouden leiden tot een duidelijk lager vertragingsrisico.
-
-                Zie dit als:
-                *als deze aspecten anders waren geweest, zou het model een gunstigere voorspelling geven.*
-
-                Dit betekent niet dat deze veranderingen automatisch haalbaar,
-                wenselijk of volledig onder controle zijn in de praktijk.
-                """)
-
-            with st.expander("Hoe genereert het systeem deze uitleg?"):
-                st.markdown("""
-                Het systeem zoekt naar een alternatief projectscenario
-                dat zo sterk mogelijk lijkt op het huidige project,
-                maar waarvoor de voorspelde vertraging lager is.
-
-                Daarbij worden alleen projectkenmerken aangepast
-                die volgens het model invloed hebben op de voorspelling.
-
-                Het doel is om zo weinig mogelijk te veranderen,
-                terwijl de voorspelling duidelijk verschilt.
-                """)
-
-
-        elif cond == "Surrogaatmodel (beslisboom)":
-            with st.expander("Hoe moet ik deze uitleg interpreteren?"):
-                st.markdown("""
-                Deze beslisboom geeft een **vereenvoudigd overzicht**
-                van hoe het AI-systeem in grote lijnen tot een voorspelling komt.
-
-                De eerste splitsingen laten zien
-                welke projectkenmerken vaak als belangrijk worden gezien.
-
-                Zie dit als:
-                *een globale indruk van hoe het model redeneert*,
-                niet als een exacte beschrijving van elke afzonderlijke voorspelling.
-                """)
-
-            with st.expander("Hoe genereert het systeem deze uitleg?"):
-                st.markdown("""
-                Deze beslisboom is getraind om het gedrag van het oorspronkelijke AI-model
-                zo goed mogelijk na te bootsen met een eenvoudiger en beter uitlegbaar model.
-
-                Door deze vereenvoudiging wordt de uitleg overzichtelijker,
-                maar gaat ook een deel van de nauwkeurigheid verloren.
-
-                De boom geeft daarom inzicht in algemene patronen,
-                niet in alle details van het onderliggende model.
-                """)
 
     st.markdown("---")
     col1, col2 = st.columns([1, 1])
