@@ -57,7 +57,6 @@ def assign_condition(conditions: list[str]) -> str:
     with get_connection() as conn:
         with conn.cursor() as cur:
 
-            # 1. Zorg dat elke conditie bestaat in de tabel
             for c in conditions:
                 cur.execute(
                     """
