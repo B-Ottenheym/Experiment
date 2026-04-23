@@ -168,7 +168,7 @@ Tijdens het experiment wordt u gevraagd om de informatie die het systeem present
 zorgvuldig te bekijken. Het onderzoek richt zich niet op het nemen van beslissingen,
 maar op **uw perceptie van de uitkomsten van het systeem en de bijbehorende uitleg**.
 
-Het experiment bestaat uit enkele korte stappen en neemt slechts enkele minuten in
+Het experiment bestaat uit enkele stappen en neemt ongeveer 10 minuten in
 beslag. Na afloop wordt u automatisch doorgestuurd naar een vragenlijst waarin u wordt
 gevraagd uw ervaringen met het systeem te beoordelen.
 
@@ -216,7 +216,7 @@ is gekomen.
             """
 **In deze versie van het systeem wordt de voorspelling ondersteund door een visuele uitleg.**
 
-De uitleg laat zien welke projectkenmerken volgens het systeem het meest hebben
+De uitleg laat zien welke projectkenmerken volgens het systeem het meest 
 bijgedragen aan de voorspelling, en in welke mate deze kenmerken het risico op
 vertraging verhogen of verlagen.
 """
@@ -256,8 +256,7 @@ gebruikt om tot een voorspelling te komen, in een vorm die makkelijker te interp
 
     st.markdown(
         """
-Lees deze uitleg zorgvuldig door. In de volgende stap ziet u de projectsituatie en
-kunt u de voorspelling en bijbehorende uitleg bekijken.
+In de volgende stap ziet u de projectsituatie en kunt u de voorspelling en bijbehorende uitleg bekijken.
 """
     )
 
