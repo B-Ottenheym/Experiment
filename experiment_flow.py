@@ -546,6 +546,15 @@ De invoerwaarden zijn vastgezet voor dit onderzoek en kunnen niet worden aangepa
                 for col in ["Origineel", "Tegenfeitelijk", "Verschil"]:
                     df[col] = df[col].astype(str)
 
+                last_idx = df.index[-1]
+
+                def bold_last_row(row):
+                    if row.name == last_idx:
+                        return ["font-weight: 700;"] * len(row)
+                    return [""] * len(row)
+        
+                styler = df.style.apply(bold_last_row, axis=1)
+
                 st.dataframe(
                     df,
                     use_container_width=True,
