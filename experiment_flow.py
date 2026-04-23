@@ -381,83 +381,121 @@ De invoerwaarden zijn vastgezet voor dit onderzoek en kunnen niet worden aangepa
             st.markdown("<div style='height:40px;'></div>", unsafe_allow_html=True)
 
         elif cond == "Regels":
-            with st.expander("Hoe moet ik deze uitleg interpreteren?", expanded=True):
-                st.markdown("""
-                Deze regel laat zien **onder welke combinatie van projectkenmerken**
-                het AI-systeem tot een vergelijkbare voorspelling komt als bij dit project.
-
-                Als aan alle genoemde voorwaarden wordt voldaan,
-                hoort daar volgens het model deze inschatting van de verwachte vertraging bij.
-
-                Zie deze regel als:
-                *de belangrijkste kenmerken waarop het model zich in dit geval baseert.*
-                """)
-
-            with st.expander("Hoe genereert het systeem deze uitleg?", expanded=True):
-                st.markdown("""
-                Deze uitleg is afgeleid van het oorspronkelijke AI-model met behulp van
-                een eenvoudiger model dat beter uitlegbaar is.
-
-                Dit vereenvoudigde model probeert het gedrag van het AI-model
-                zo goed mogelijk te benaderen in de buurt van deze voorspelling.
-
-                De regel is daardoor een benadering en geen exacte weergave
-                van alle interne berekeningen van het oorspronkelijke model.
-                """)
+            st.markdown(
+                """
+        <div style="background-color:#fff8f4; border:2px solid #ddd; padding:16px; margin-bottom:16px;">
+          <div style="font-weight:600; font-size:17px; margin-bottom:8px;">
+            Hoe moet ik deze uitleg interpreteren?
+          </div>
+          <div style="font-size:15px; line-height:1.5;">
+            Deze regel laat zien <strong>onder welke combinatie van projectkenmerken</strong>
+            het AI-systeem tot een vergelijkbare voorspelling komt als bij dit project.
+            <br><br>
+            Als aan alle genoemde voorwaarden wordt voldaan,
+            hoort daar volgens het model deze inschatting van de verwachte vertraging bij.
+            <br><br>
+            Zie deze regel als:
+            <em>de belangrijkste kenmerken waarop het model zich in dit geval baseert.</em>
+          </div>
+        </div>
+        
+        <div style="background-color:#fff8f4; border:1px solid #ddd; padding:16px;">
+          <div style="font-weight:600; font-size:17px; margin-bottom:8px;">
+            Hoe genereert het systeem deze uitleg?
+          </div>
+          <div style="font-size:15px; line-height:1.5;">
+            Deze uitleg is afgeleid van het oorspronkelijke AI-model met behulp van
+            een eenvoudiger model dat beter uitlegbaar is.
+            <br><br>
+            Dit vereenvoudigde model probeert het gedrag van het AI-model
+            zo goed mogelijk te benaderen in de buurt van deze voorspelling.
+            <br><br>
+            De regel is daardoor een benadering en geen exacte weergave
+            van alle interne berekeningen van het oorspronkelijke model.
+          </div
 
 
         elif cond == "Tegenfeitelijk":
-            with st.expander("Hoe moet ik deze uitleg interpreteren?", expanded=True):
-                st.markdown("""
-                Deze tegenfeitelijke uitleg laat zien **welke minimale veranderingen**
-                in het project volgens het model zouden leiden tot een duidelijk lager vertragingsrisico.
-
-                Zie dit als:
-                *als deze aspecten anders waren geweest, zou het model een gunstigere voorspelling geven.*
-
-                Dit betekent niet dat deze veranderingen automatisch haalbaar,
-                wenselijk of volledig onder controle zijn in de praktijk.
-                """)
-
-            with st.expander("Hoe genereert het systeem deze uitleg?", expanded=True):
-                st.markdown("""
-                Het systeem zoekt naar een alternatief projectscenario
-                dat zo sterk mogelijk lijkt op het huidige project,
-                maar waarvoor de voorspelde vertraging lager is.
-
-                Daarbij worden alleen projectkenmerken aangepast
-                die volgens het model invloed hebben op de voorspelling.
-
-                Het doel is om zo weinig mogelijk te veranderen,
-                terwijl de voorspelling duidelijk verschilt.
-                """)
-
+            st.markdown(
+                """
+        <div style="background-color:#fff8f4; border:2px solid #ddd; padding:16px; margin-bottom:16px;">
+          <div style="font-weight:600; font-size:17px; margin-bottom:8px;">
+            Hoe moet ik deze uitleg interpreteren?
+          </div>
+          <div style="font-size:15px; line-height:1.5;">
+            Deze tegenfeitelijke uitleg laat zien <strong>welke minimale veranderingen</strong>
+            in het project volgens het model zouden leiden tot een duidelijk lager vertragingsrisico.
+            <br><br>
+            Zie dit als:
+            <em>als deze aspecten anders waren geweest, zou het model een gunstigere voorspelling geven.</em>
+            <br><br>
+            Dit betekent niet dat deze veranderingen automatisch haalbaar,
+            wenselijk of volledig onder controle zijn in de praktijk.
+          </div>
+        </div>
+        
+        <div style="background-color:#fff8f4; border:1px solid #ddd; padding:16px;">
+          <div style="font-weight:600; font-size:17px; margin-bottom:8px;">
+            Hoe genereert het systeem deze uitleg?
+          </div>
+          <div style="font-size:15px; line-height:1.5;">
+            Het systeem zoekt naar een alternatief projectscenario
+            dat zo sterk mogelijk lijkt op het huidige project,
+            maar waarvoor de voorspelde vertraging lager is.
+            <br><br>
+            Daarbij worden alleen projectkenmerken aangepast
+            die volgens het model invloed hebben op de voorspelling.
+            <br><br>
+            Het doel is om zo weinig mogelijk te veranderen,
+            terwijl de voorspelling duidelijk verschilt.
+          </div>
+        </div>
+                """,
+                unsafe_allow_html=True,
+            )
+        
+            st.markdown("<div style='height:40px;'></div>", unsafe_allow_html=True)
 
         elif cond == "Surrogaatmodel (beslisboom)":
-            with st.expander("Hoe moet ik deze uitleg interpreteren?", expanded=True):
-                st.markdown("""
-                Deze beslisboom geeft een **vereenvoudigd overzicht**
-                van hoe het AI-systeem in grote lijnen tot een voorspelling komt.
-
-                De eerste splitsingen laten zien
-                welke projectkenmerken vaak als belangrijk worden gezien.
-
-                Zie dit als:
-                *een globale indruk van hoe het model redeneert*,
-                niet als een exacte beschrijving van elke afzonderlijke voorspelling.
-                """)
-
-            with st.expander("Hoe genereert het systeem deze uitleg?", expanded=True):
-                st.markdown("""
-                Deze beslisboom is getraind om het gedrag van het oorspronkelijke AI-model
-                zo goed mogelijk na te bootsen met een eenvoudiger en beter uitlegbaar model.
-
-                Door deze vereenvoudiging wordt de uitleg overzichtelijker,
-                maar gaat ook een deel van de nauwkeurigheid verloren.
-
-                De boom geeft daarom inzicht in algemene patronen,
-                niet in alle details van het onderliggende model.
-                """)
+            st.markdown(
+                """
+        <div style="background-color:#fff8f4; border:2px solid #ddd; padding:16px; margin-bottom:16px;">
+          <div style="font-weight:600; font-size:17px; margin-bottom:8px;">
+            Hoe moet ik deze uitleg interpreteren?
+          </div>
+          <div style="font-size:15px; line-height:1.5;">
+            Deze beslisboom geeft een <strong>vereenvoudigd overzicht</strong>
+            van hoe het AI-systeem in grote lijnen tot een voorspelling komt.
+            <br><br>
+            De eerste splitsingen laten zien
+            welke projectkenmerken vaak als belangrijk worden gezien.
+            <br><br>
+            Zie dit als:
+            <em>een globale indruk van hoe het model redeneert</em>,
+            niet als een exacte beschrijving van elke afzonderlijke voorspelling.
+          </div>
+        </div>
+        
+        <div style="background-color:#fff8f4; border:1px solid #ddd; padding:16px;">
+          <div style="font-weight:600; font-size:17px; margin-bottom:8px;">
+            Hoe genereert het systeem deze uitleg?
+          </div>
+          <div style="font-size:15px; line-height:1.5;">
+            Deze beslisboom is getraind om het gedrag van het oorspronkelijke AI-model
+            zo goed mogelijk na te bootsen met een eenvoudiger en beter uitlegbaar model.
+            <br><br>
+            Door deze vereenvoudiging wordt de uitleg overzichtelijker,
+            maar gaat ook een deel van de nauwkeurigheid verloren.
+            <br><br>
+            De boom geeft daarom inzicht in algemene patronen,
+            niet in alle details van het onderliggende model.
+          </div>
+        </div>
+                """,
+                unsafe_allow_html=True,
+            )
+        
+            st.markdown("<div style='height:40px;'></div>", unsafe_allow_html=True)
 
         if cond == "Black box":
             st.info("In deze versie van het systeem wordt geen uitleg bij de voorspelling gegeven.")
