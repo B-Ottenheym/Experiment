@@ -377,7 +377,7 @@ De invoerwaarden zijn vastgezet voor dit onderzoek en kunnen niet worden aangepa
                 unsafe_allow_html=True,
             )
 
-        st.markdown("<div style='height:40px;'></div>", unsafe_allow_html=True)
+            st.markdown("<div style='height:40px;'></div>", unsafe_allow_html=True)
 
         elif cond == "Regels":
             with st.expander("Hoe moet ik deze uitleg interpreteren?", expanded=True):
