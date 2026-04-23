@@ -13,8 +13,6 @@ import psycopg2
 from dictionaries import var_groups, var_labels_dutch, var_descriptions_dutch, var_units_dutch, group_labels_dutch, binary_vars
 from experiment_config import (CONDITIONS, QUALTRICS_BASE_URL, SCENARIOS, xai_path, XAI_DIR)
 
-CONDITION_COUNT_FILE = Path("condition_counts.json")
-
 def _init_participant_state():
     if "pid" not in st.session_state: #participant id
         st.session_state.pid = str(uuid.uuid4())
