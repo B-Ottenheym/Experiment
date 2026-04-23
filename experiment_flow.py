@@ -342,11 +342,11 @@ De invoerwaarden zijn vastgezet voor dit onderzoek en kunnen niet worden aangepa
         if cond == "SHAP":            
             st.markdown(
                 """
-            <div style="background-color:#fff4ec; border:1px solid #ddd; padding:16px; margin-bottom:16px;">
-              <div style="font-weight:600; font-size:15px; margin-bottom:8px;">
+            <div style="background-color:#fff4ec; border:2px solid #ddd; padding:16px; margin-bottom:16px;">
+              <div style="font-weight:600; font-size:18px; margin-bottom:8px;">
                 Hoe moet ik deze uitleg interpreteren?
               </div>
-              <div style="font-size:14px; line-height:1.5;">
+              <div style="font-size:16px; line-height:1.2;">
                 Deze uitleg laat zien welke projectkenmerken volgens het model
                 het meest bijdragen aan de voorspelling voor dit specifieke project.
                 <br><br>
@@ -356,10 +356,10 @@ De invoerwaarden zijn vastgezet voor dit onderzoek en kunnen niet worden aangepa
             </div>
             
             <div style="background-color:#f8f8f8; border:1px solid #ddd; padding:16px;">
-              <div style="font-weight:600; font-size:15px; margin-bottom:8px;">
+              <div style="font-weight:600; font-size:18px; margin-bottom:8px;">
                 Hoe genereert het systeem deze uitleg?
               </div>
-              <div style="font-size:14px; line-height:1.5;">
+              <div style="font-size:16px; line-height:1.2;">
                 Het systeem genereert deze uitleg door te analyseren
                 hoe veranderingen in afzonderlijke projectkenmerken
                 de voorspelling van het model beïnvloeden.
