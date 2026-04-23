@@ -360,7 +360,7 @@ De invoerwaarden zijn vastgezet voor dit onderzoek en kunnen niet worden aangepa
             </div>
             
             <div style="background-color:#fff4ec; border:1px solid #ddd; padding:16px;">
-              <div style="font-weight:600; font-size:17px; margin-bottom:32px;">
+              <div style="font-weight:600; font-size:17px; margin-bottom:8px;">
                 Hoe genereert het systeem deze uitleg?
               </div>
               <div style="font-size:15px; line-height:1.5;">
@@ -376,6 +376,8 @@ De invoerwaarden zijn vastgezet voor dit onderzoek en kunnen niet worden aangepa
                 """,
                 unsafe_allow_html=True,
             )
+
+        st.markdown("<div style='height:40px;'></div>", unsafe_allow_html=True)
 
         elif cond == "Regels":
             with st.expander("Hoe moet ik deze uitleg interpreteren?", expanded=True):
