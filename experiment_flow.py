@@ -464,12 +464,12 @@ De invoerwaarden zijn vastgezet voor dit onderzoek en kunnen niet worden aangepa
         elif cond == "SHAP":
             p = xai_path(cond)
             if p.exists():
-                col_img, col_spacer = st.columns([3, 1])  # ±75% / 25%
+                col_spacer_left, col_img, col_spacer_right = st.columns([1, 4, 1])
                 with col_img:
                     st.image(str(p), use_container_width=True)
             else:
                 st.warning(f"Afbeelding niet gevonden: {p}")
-        
+    
         elif cond == "Surrogaatmodel (beslisboom)":
             p = xai_path(cond)
             if p.exists():
