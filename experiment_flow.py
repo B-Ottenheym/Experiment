@@ -18,8 +18,6 @@ def _init_participant_state():
         st.session_state.pid = str(uuid.uuid4())
     if "scenario_id" not in st.session_state:
         st.session_state.scenario_id = SCENARIOS[0].scenario_id
-    if "condition" not in st.session_state:
-        st.session_state.condition = assign_condition(CONDITIONS)
     if "exp_step" not in st.session_state:
         st.session_state.exp_step = 1
 
