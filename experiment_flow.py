@@ -30,8 +30,16 @@ def _get_scenario():
             return s
     return SCENARIOS[0]
 
+def assign_condition_if_needed():
+    if "condition" not in st.session_state:
+        st.session_state.condition = assign_condition(CONDITIONS)
+
 def _next():
+    if st.session_state.exp_step == 1:
+        _assign_condition_if_needed()
     st.session_state.exp_step += 1
+
+#to prevent condition assignment by streamlit health checks (was updating the condition countdatabase)
 
 def _back():
     st.session_state.exp_step = max(1, st.session_state.exp_step - 1)
