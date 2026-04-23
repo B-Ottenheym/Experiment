@@ -412,7 +412,11 @@ De invoerwaarden zijn vastgezet voor dit onderzoek en kunnen niet worden aangepa
             <br><br>
             De regel is daardoor een benadering en geen exacte weergave
             van alle interne berekeningen van het oorspronkelijke model.
-          </div
+            </div>
+          </div>
+                """,
+                unsafe_allow_html=True,
+            )
 
 
         elif cond == "Tegenfeitelijk":
