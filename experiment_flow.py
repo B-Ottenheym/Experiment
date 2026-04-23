@@ -340,16 +340,15 @@ De invoerwaarden zijn vastgezet voor dit onderzoek en kunnen niet worden aangepa
         st.subheader(f"Uitleg ({cond})")
 
         if cond == "SHAP":
-            with st.container():
-                st.markdown("### Hoe moet ik deze uitleg interpreteren?")
-                st.info("""
-                Deze uitleg helpt om te begrijpen waarom het model tot deze voorspelling komt.
-                """)
-            
-            with st.container():
-                st.markdown("### Hoe genereert het systeem deze uitleg?")
-                st.info("""
-                Het systeem genere""")
+
+            st.markdown("""
+            <div style="border:1px solid #ddd; padding:16px; margin-bottom:16px;">
+              <h4>Hoe moet ik deze uitleg interpreteren?</h4>
+              <p>
+                Deze grafiek laat zien welke kenmerken bijdragen aan de voorspelling.
+              </p>
+            </div>
+
 
 
 
