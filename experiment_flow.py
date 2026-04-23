@@ -367,7 +367,7 @@ De invoerwaarden zijn vastgezet voor dit onderzoek en kunnen niet worden aangepa
               </p>
             </div>
                 """,
-                unsafe_allow_html=True,
+                unsafe_allow_html=True, border-left:4px solid #ffb278; border: none;
             )
 
 
