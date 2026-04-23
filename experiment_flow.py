@@ -347,25 +347,30 @@ De invoerwaarden zijn vastgezet voor dit onderzoek en kunnen niet worden aangepa
                 Hoe moet ik deze uitleg interpreteren?
               </div>
               <div style="font-size:16px; line-height:1.2;">
-                Deze uitleg laat zien welke projectkenmerken volgens het model
-                het meest bijdragen aan de voorspelling voor dit specifieke project.
-                <br><br>
-                De uitleg helpt om te begrijpen waarom het model tot deze uitkomst komt,
-                maar is niet bedoeld als algemene regel voor alle projecten.
+                  Deze grafiek laat zien **welke projectkenmerken volgens het model het meest bijdragen**
+                  aan de voorspelling voor **dit specifieke project**.
+                  
+                  - Balken die omhoog wijzen vergroten het voorspelde vertragingsrisico.
+                  - Balken die omlaag wijzen verkleinen het voorspelde vertragingsrisico.
+                  - Hoe langer de balk, hoe groter de invloed van dat kenmerk volgens het model.
+                  
+                  Deze uitleg helpt om te begrijpen **waarom het model tot deze voorspelling komt**,
+                  maar zegt niets over welke kenmerken in alle projecten belangrijk zijn.
               </div>
             </div>
             
-            <div style="background-color:#f8f8f8; border:1px solid #ddd; padding:16px;">
+            <div style="background-color:#fff4ec; border:1px solid #ddd; padding:16px;">
               <div style="font-weight:600; font-size:18px; margin-bottom:8px;">
                 Hoe genereert het systeem deze uitleg?
               </div>
               <div style="font-size:16px; line-height:1.2;">
-                Het systeem genereert deze uitleg door te analyseren
-                hoe veranderingen in afzonderlijke projectkenmerken
-                de voorspelling van het model beïnvloeden.
-                <br><br>
-                Op basis van deze analyse wordt bepaald welke kenmerken
-                volgens het model het meest relevant zijn voor de uiteindelijke uitkomst.
+                Deze uitleg is gebaseerd op een methode die per project bekijkt
+                hoeveel ieder projectkenmerk bijdraagt aan de uiteindelijke voorspelling.
+
+                Het model vergelijkt daarbij de voorspelling mét en zonder specifieke kenmerken.
+                Op basis van dit verschil wordt bepaald of een kenmerk de voorspelling verhoogt of verlaagt.
+
+                De uitleg is specifiek voor dit project en deze voorspelling.
               </div>
             </div>
                 """,
