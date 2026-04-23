@@ -340,23 +340,17 @@ De invoerwaarden zijn vastgezet voor dit onderzoek en kunnen niet worden aangepa
         st.subheader(f"Uitleg ({cond})")
 
         if cond == "SHAP":
-            st.markdown("---")
-            st.markdown("### Hoe moet ik deze uitleg interpreteren?")
-            st.markdown("""
-            Deze grafiek laat zien welke projectkenmerken volgens het model het meest bijdragen
-            aan de voorspelling voor dit specifieke project.
+            with st.container():
+                st.markdown("### Hoe moet ik deze uitleg interpreteren?")
+                st.info("""
+                Deze uitleg helpt om te begrijpen waarom het model tot deze voorspelling komt.
+                """)
             
-            - Balken omhoog vergroten het risico
-            - Balken omlaag verkleinen het risico
-            - Lengte geeft de mate van invloed aan
-            """)
-            
-            st.markdown("---")
-            st.markdown("### Hoe genereert het systeem deze uitleg?")
-            st.markdown("""
-            Deze uitleg is gegenereerd door het model meerdere keren te evalueren met en zonder
-            specifieke projectkenmerken, om zo de bijdrage per kenmerk te bepalen.
-            """)
+            with st.container():
+                st.markdown("### Hoe genereert het systeem deze uitleg?")
+                st.info("""
+                Het systeem genere""")
+
 
 
         elif cond == "Regels":
