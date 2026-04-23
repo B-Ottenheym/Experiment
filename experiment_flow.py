@@ -550,7 +550,7 @@ De invoerwaarden zijn vastgezet voor dit onderzoek en kunnen niet worden aangepa
 
                 def bold_last_row(row):
                     if row.name == last_idx:
-                        return ["font-weight: 700;"] * len(row)
+                        return ["font-weight: 500;"] * len(row)
                     return [""] * len(row)
         
                 styler = df.style.apply(bold_last_row, axis=1)
