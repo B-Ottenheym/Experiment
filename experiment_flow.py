@@ -334,10 +334,10 @@ De invoerwaarden zijn vastgezet voor dit onderzoek en kunnen niet worden aangepa
         else:
             st.warning(f"Voorspellingsbestand niet gevonden: {prediction_path}")
 
-
-
-        st.subheader("Uitleg")
+        st.markdown("---")
+        
         cond = st.session_state.condition
+        st.subheader(f"Uitleg ({cond})")
 
         if cond == "SHAP":
             with st.expander("Hoe moet ik deze uitleg interpreteren?", expanded=True):
