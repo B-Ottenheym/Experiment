@@ -461,10 +461,19 @@ De invoerwaarden zijn vastgezet voor dit onderzoek en kunnen niet worden aangepa
         if cond == "Black box":
             st.info("In deze versie van het systeem wordt geen uitleg bij de voorspelling gegeven.")
 
-        elif cond in ("SHAP", "Surrogaatmodel (beslisboom)"):
+        elif cond == "SHAP":
             p = xai_path(cond)
             if p.exists():
-                st.image(str(p), use_container_width=True)
+                col_img, col_spacer = st.columns([3, 1])  # ±75% / 25%
+                with col_img:
+                    st.image(str(p), use_container_width=True)
+            else:
+                st.warning(f"Afbeelding niet gevonden: {p}")
+        
+        elif cond == "Surrogaatmodel (beslisboom)":
+            p = xai_path(cond)
+            if p.exists():
+                st.image(str(p), use_container_width=True)  # maximaal groot
             else:
                 st.warning(f"Afbeelding niet gevonden: {p}")
 
