@@ -9,6 +9,7 @@ import numpy as np
 import json
 from pathlib import Path
 import random
+import psycopg2
 from dictionaries import var_groups, var_labels_dutch, var_descriptions_dutch, var_units_dutch, group_labels_dutch, binary_vars
 from experiment_config import (CONDITIONS, QUALTRICS_BASE_URL, SCENARIOS, xai_path, XAI_DIR)
 
@@ -51,21 +52,51 @@ def _build_qualtrics_url():
         return QUALTRICS_BASE_URL + "&" + qs
     return QUALTRICS_BASE_URL + "?" + qs
 
+
+def get_connection():
+    return psycopg2.connect(st.secrets["db"]["url"])
+
+
 def assign_condition(conditions: list[str]) -> str:
-    if CONDITION_COUNT_FILE.exists():
-        counts = json.loads(CONDITION_COUNT_FILE.read_text())
-    else:
-        counts = {c: 0 for c in conditions}
+    with get_connection() as conn:
+        with conn.cursor() as cur:
 
-    min_count = min(counts.values())
-    candidates = [c for c, n in counts.items() if n == min_count]
+            # 1. Zorg dat elke conditie bestaat in de tabel
+            for c in conditions:
+                cur.execute(
+                    """
+                    insert into condition_counts (condition)
+                    values (%s)
+                    on conflict (condition) do nothing
+                    """,
+                    (c,)
+                )
 
-    condition = random.choice(candidates)
+            cur.execute(
+                """
+                select condition, count
+                from condition_counts
+                where condition = any(%s)
+                """,
+                (conditions,)
+            )
+            rows = cur.fetchall()
 
-    counts[condition] += 1
-    CONDITION_COUNT_FILE.write_text(json.dumps(counts, indent=2))
+            min_count = min(n for _, n in rows)
+            candidates = [c for c, n in rows if n == min_count]
+            chosen = random.choice(candidates)
 
-    return condition
+            cur.execute(
+                """
+                update condition_counts
+                set count = count + 1,
+                    updated_at = now()
+                where condition = %s
+                """,
+                (chosen,)
+            )
+
+            return chosen
 
 def _features_to_table(features: dict) -> pd.DataFrame:
     rows = []
