@@ -433,9 +433,9 @@ De invoerwaarden zijn vastgezet voor dit onderzoek en kunnen niet worden aangepa
             <br><br>
             &#8226; <strong>Origineel</strong>: de waarde uit het projectscenario dat u zojuist heeft gezien (de invoer voor dit project).<br>
             &#8226; <strong>Tegenfeitelijk</strong>: een alternatief scenario met aangepaste waarden dat volgens het model gunstiger uitpakt.<br>
-            &#8226; <strong>Verschil</strong>: het verschil tussen Tegenfeitelijk en Origineel (in dezelfde eenheid als de waarde).
+            &#8226; <strong>Verschil</strong>: het verschil tussen Tegenfeitelijk en Origineel.
             <br><br>
-            In de cellen staan waarden inclusief eenheden (bijvoorbeeld “6 lagen”). De rijen geven aan
+            In de cellen staan waarden inclusief eenheden. De rijen geven aan
             <strong>welke projectkenmerken veranderd zouden moeten worden</strong> om volgens het model een lagere voorspelde vertraging te krijgen.
             <br><br>
             Dit is een modelmatige “wat-als” uitleg. Het betekent niet automatisch dat veranderingen haalbaar,
