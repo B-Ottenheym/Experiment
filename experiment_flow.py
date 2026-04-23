@@ -369,13 +369,7 @@ De invoerwaarden zijn vastgezet voor dit onderzoek en kunnen niet worden aangepa
                 df = pd.read_csv(p, sep=";")
 
                 for col in ["Origineel", "Tegenfeitelijk", "Verschil"]:
-                    df[col] = (
-                        df[col]
-                        .astype(str)
-                        .str.replace(",", ".", regex=False)
-                        .str.extract(r"([-+]?\d*\.?\d+)", expand=False)
-                        .astype(float)
-                    )
+                    df[col] = df[col].astype(str)
 
                 st.dataframe(
                     df,
