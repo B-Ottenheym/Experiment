@@ -433,7 +433,7 @@ De invoerwaarden zijn vastgezet voor dit onderzoek en kunnen niet worden aangepa
 
 
         elif cond == "Tegenfeitelijk":
-            with st.expander("Hoe moet ik deze uitleg interpreteren?"):
+            with st.expander("Hoe moet ik deze uitleg interpreteren?", expanded=True):
                 st.markdown("""
                 Deze tegenfeitelijke uitleg laat zien **welke minimale veranderingen**
                 in het project volgens het model zouden leiden tot een duidelijk lager vertragingsrisico.
