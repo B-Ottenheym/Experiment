@@ -343,7 +343,7 @@ De invoerwaarden zijn vastgezet voor dit onderzoek en kunnen niet worden aangepa
         if cond == "SHAP":            
             st.markdown(
                 """
-            <div style="background-color:#fff4ec; border:2px solid #ddd; padding:16px; margin-bottom:16px;">
+            <div style="background-color:#fff8f4; border:2px solid #ddd; padding:16px; margin-bottom:16px;">
               <div style="font-weight:600; font-size:17px; margin-bottom:8px;">
                 Hoe moet ik deze uitleg interpreteren?
               </div>
