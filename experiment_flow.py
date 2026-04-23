@@ -556,7 +556,7 @@ De invoerwaarden zijn vastgezet voor dit onderzoek en kunnen niet worden aangepa
                 styler = df.style.apply(bold_last_row, axis=1)
 
                 st.dataframe(
-                    df,
+                    styler,
                     use_container_width=True,
                     hide_index=True
                 )
