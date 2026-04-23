@@ -36,7 +36,7 @@ def assign_condition_if_needed():
 
 def _next():
     if st.session_state.exp_step == 1:
-        _assign_condition_if_needed()
+        assign_condition_if_needed()
     st.session_state.exp_step += 1
 
 #to prevent condition assignment by streamlit health checks (was updating the condition countdatabase)
