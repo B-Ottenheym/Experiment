@@ -238,7 +238,7 @@ voor de uitkomst.
             """
 **In deze versie van het systeem wordt de voorspelling toegelicht met alternatieve scenario’s.**
 
-De uitleg laat zien hoe kleine aanpassingen in specifieke projectkenmerken zouden
+De uitleg laat zien hoe aanpassingen in specifieke projectkenmerken zouden
 kunnen leiden tot een andere voorspelling, bijvoorbeeld een lager risico op
 vertraging.
 """
