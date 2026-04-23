@@ -391,7 +391,7 @@ De invoerwaarden zijn vastgezet voor dit onderzoek en kunnen niet worden aangepa
             Deze regel laat zien <strong>onder welke combinatie van projectkenmerken</strong>
             het AI-systeem tot een vergelijkbare voorspelling komt als bij dit project.
             <br><br>
-            Als aan alle genoemde voorwaarden wordt voldaan,
+            Als aan de genoemde voorwaarden wordt voldaan,
             hoort daar volgens het model deze inschatting van de verwachte vertraging bij.
             <br><br>
             Zie deze regel als:
@@ -417,6 +417,7 @@ De invoerwaarden zijn vastgezet voor dit onderzoek en kunnen niet worden aangepa
                 """,
                 unsafe_allow_html=True,
             )
+            st.markdown("<div style='height:40px;'></div>", unsafe_allow_html=True)
 
 
         elif cond == "Tegenfeitelijk":
@@ -427,13 +428,17 @@ De invoerwaarden zijn vastgezet voor dit onderzoek en kunnen niet worden aangepa
             Hoe moet ik deze uitleg interpreteren?
           </div>
           <div style="font-size:15px; line-height:1.5;">
-            Deze tegenfeitelijke uitleg laat zien <strong>welke minimale veranderingen</strong>
-            in het project volgens het model zouden leiden tot een duidelijk lager vertragingsrisico.
+            Deze tabel vergelijkt het oorspronkelijke project met een alternatief scenario
+            dat volgens het model leidt tot een <strong>lager vertragingsrisico</strong>.
             <br><br>
-            Zie dit als:
-            <em>als deze aspecten anders waren geweest, zou het model een gunstigere voorspelling geven.</em>
+            &#8226; <strong>Origineel</strong>: de waarde uit het projectscenario dat u zojuist heeft gezien (de invoer voor dit project).<br>
+            &#8226; <strong>Tegenfeitelijk</strong>: een alternatief scenario met aangepaste waarden dat volgens het model gunstiger uitpakt.<br>
+            &#8226; <strong>Verschil</strong>: het verschil tussen Tegenfeitelijk en Origineel (in dezelfde eenheid als de waarde).
             <br><br>
-            Dit betekent niet dat deze veranderingen automatisch haalbaar,
+            In de cellen staan waarden inclusief eenheden (bijvoorbeeld “6 lagen”). De rijen geven aan
+            <strong>welke projectkenmerken veranderd zouden moeten worden</strong> om volgens het model een lagere voorspelde vertraging te krijgen.
+            <br><br>
+            Dit is een modelmatige “wat-als” uitleg. Het betekent niet automatisch dat veranderingen haalbaar,
             wenselijk of volledig onder controle zijn in de praktijk.
           </div>
         </div>
@@ -443,15 +448,14 @@ De invoerwaarden zijn vastgezet voor dit onderzoek en kunnen niet worden aangepa
             Hoe genereert het systeem deze uitleg?
           </div>
           <div style="font-size:15px; line-height:1.5;">
-            Het systeem zoekt naar een alternatief projectscenario
-            dat zo sterk mogelijk lijkt op het huidige project,
-            maar waarvoor de voorspelde vertraging lager is.
+            Het systeem zoekt naar een alternatief scenario dat zo veel mogelijk lijkt op het huidige project,
+            maar waarvoor de voorspelling duidelijk gunstiger is.
             <br><br>
-            Daarbij worden alleen projectkenmerken aangepast
-            die volgens het model invloed hebben op de voorspelling.
+            Daarbij probeert het systeem <strong>zo weinig mogelijk kenmerken</strong> te veranderen en
+            vooral kenmerken aan te passen die volgens het model invloed hebben op de uitkomst.
             <br><br>
-            Het doel is om zo weinig mogelijk te veranderen,
-            terwijl de voorspelling duidelijk verschilt.
+            Het resultaat is een voorbeeld van een “minimale” aanpassing die volgens het model
+            voldoende is om de voorspelling te verbeteren.
           </div>
         </div>
                 """,
