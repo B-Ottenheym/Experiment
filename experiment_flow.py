@@ -373,6 +373,7 @@ De invoerwaarden zijn vastgezet voor dit onderzoek en kunnen niet worden aangepa
                         df[col]
                         .astype(str)
                         .str.replace(",", ".", regex=False)
+                        .str.extract(r"([-+]?\d*\.?\d+)", expand=False)
                         .astype(float)
                     )
 
