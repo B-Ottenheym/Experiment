@@ -12,3 +12,4 @@ dice-ml
 alibi
 anchor-exp
 XAI-library
+psycopg2-binary
