@@ -347,7 +347,7 @@ De invoerwaarden zijn vastgezet voor dit onderzoek en kunnen niet worden aangepa
               <p>
                 Deze grafiek laat zien welke kenmerken bijdragen aan de voorspelling.
               </p>
-            </div>
+            </div>""")
 
 
 
