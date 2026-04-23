@@ -347,15 +347,15 @@ De invoerwaarden zijn vastgezet voor dit onderzoek en kunnen niet worden aangepa
                 Hoe moet ik deze uitleg interpreteren?
               </div>
               <div style="font-size:16px; line-height:1.2;">
-                  Deze grafiek laat zien **welke projectkenmerken volgens het model het meest bijdragen**
-                  aan de voorspelling voor **dit specifieke project**.
-                  
-                  - Balken die omhoog wijzen vergroten het voorspelde vertragingsrisico.
-                  - Balken die omlaag wijzen verkleinen het voorspelde vertragingsrisico.
-                  - Hoe langer de balk, hoe groter de invloed van dat kenmerk volgens het model.
-                  
-                  Deze uitleg helpt om te begrijpen **waarom het model tot deze voorspelling komt**,
-                  maar zegt niets over welke kenmerken in alle projecten belangrijk zijn.
+                Deze grafiek laat zien <strong>welke projectkenmerken volgens het model het meest bijdragen</strong>
+                aan de voorspelling voor <strong>dit specifieke project</strong>.
+                <br><br>
+                &#8226; Balken die omhoog wijzen vergroten het voorspelde vertragingsrisico.<br>
+                &#8226; Balken die omlaag wijzen verkleinen het voorspelde vertragingsrisico.<br>
+                &#8226; Hoe langer de balk, hoe groter de invloed van dat kenmerk volgens het model.
+                <br><br>
+                Deze uitleg helpt om te begrijpen <strong>waarom het model tot deze voorspelling komt</strong>,
+                maar zegt niets over welke kenmerken in alle projecten belangrijk zijn.
               </div>
             </div>
             
@@ -366,10 +366,10 @@ De invoerwaarden zijn vastgezet voor dit onderzoek en kunnen niet worden aangepa
               <div style="font-size:16px; line-height:1.2;">
                 Deze uitleg is gebaseerd op een methode die per project bekijkt
                 hoeveel ieder projectkenmerk bijdraagt aan de uiteindelijke voorspelling.
-
-                Het model vergelijkt daarbij de voorspelling mét en zonder specifieke kenmerken.
+                <br><br>
+                Het model vergelijkt daarbij de voorspelling met en zonder specifieke kenmerken.
                 Op basis van dit verschil wordt bepaald of een kenmerk de voorspelling verhoogt of verlaagt.
-
+                <br><br>
                 De uitleg is specifiek voor dit project en deze voorspelling.
               </div>
             </div>
